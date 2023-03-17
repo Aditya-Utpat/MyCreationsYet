@@ -1,0 +1,17 @@
+"Eco-commute"
+
+This app is going to track the carbon-dioxide as well as other data about our commuting habits.
+
+goals of the app:
+*to track the carbon-dioxide released while travelling/commuting
+*to track this periodically everyday on a fixed time of commuting
+*start tracking when detect that phone is on move
+*save the data generated while tracking to a database
+
+user input needed for tracking:
+# location data
+# type of vehical
+# type of fuel used
+# time of commute
+
+calculations about CO2

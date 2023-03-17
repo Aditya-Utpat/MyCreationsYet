@@ -1,0 +1,85 @@
+<StartScreen>:
+    MDIcon:
+        icon:'fountain-pen'
+        halign:'center'
+        valign:'top'
+        font_size:'100px'
+        pos_hint:{'center_x':0.5,'center_y':0.65}
+        theme_text_color:'Custom'
+        text_color:self.theme_cls.primary_color
+    MDLabel:
+        text:'Typewriter'
+        font_style:'H4'
+        halign:'center'
+        pos_hint:{'center_x':0.5,'center_y':0.35}
+        theme_text_color:'Custom'
+        text_color:self.theme_cls.primary_color
+    MDLabel:
+        text:'writing made more mobile'
+        theme_text_color:'ContrastParentBackground'
+        halign:'center'
+        pos_hint:{'center_x':0.5,'center_y':0.25}
+        text_color:self.theme_cls.primary_color
+    MDLabel:
+        text:'  By Aditya Utpat \n Built with Python'
+        theme_text_color:'Hint'
+        halign:'center'
+        pos_hint:{'center_x':0.5,'center_y':0.05}
+    MDFlatButton:
+        size_hint_x:1
+        size_hint_y:1
+        on_press:root.manager.current='Main'
+<MainScreen>:
+    ScrollView:
+        pos_hint: {"top":0.89}
+        MDList:
+            id: file_list
+    MDToolbar:
+        title: "Navigation Drawer"
+        elevation: 10
+        left_action_items: [['menu', lambda x: nav_drawer.set_state("open")]]
+        pos_hint: {"top": 1}
+    MDNavigationDrawer:
+        id: nav_drawer
+        BoxLayout:
+            orientation:'vertical'
+            MDIcon:
+                icon:'fountain-pen'
+                font_size:'75px'
+                size_hint_y:0.25
+                size_hint_x:0.5
+                text_color:'Indigo'
+            MDLabel:
+                text:' Typewriter'
+                size_hint_y:0.07
+                size_hint_x:0.5
+                font_style:'H5'
+                height: self.texture_size[1]
+                text_color:'Indigo'
+
+            ScrollView:
+                MDList:
+                    OneLineAvatarListItem:
+                        text:'New Note'
+                        on_press:root.go_doc()
+                        IconLeftWidget:
+                            icon: "note-plus-outline"
+                            on_press:root.go_doc()
+                    OneLineAvatarListItem:
+                        text:'New Document'
+                        on_press:root.go_doc()
+                        IconLeftWidget:
+                            icon: "file-document-box-plus-outline"
+                            on_press:root.go_doc()
+                    OneLineAvatarListItem:
+                        text:'Import document'
+                        on_press:root.go_doc()
+                        IconLeftWidget:
+                            icon: "import"
+                            on_press:root.go_doc()
+
+<EditScreen>:
+    BoxLayout:
+        id:edit
+        MDLabel:
+            text:'hello'
